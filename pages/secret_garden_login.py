@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from browser import Browser
 import logging
-from time import sleep
 
 
 class HomePage(Browser):
@@ -87,7 +86,7 @@ class HomePage(Browser):
     def my_account_page(self):
         try:
             self.driver.refresh()
-            self.driver.find_element(*self.ACCOUNT_BTN).click()
+            WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.ACCOUNT_BTN)).click()
             dashboard = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.DASHBOARD))
             assert dashboard.is_displayed()
             logging.info("I logged in my account successfully and the dashboard menu is visible.")
@@ -116,7 +115,6 @@ class HomePage(Browser):
             reset_button.click()
         except Exception as e:
             logging.error(f"An error occurred while clicking the reset password button : {str(e)}")
-            sleep(2)
 
     def reset_password_message(self):
         try:

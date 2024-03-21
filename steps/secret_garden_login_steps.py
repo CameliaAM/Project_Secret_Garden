@@ -75,9 +75,9 @@ def step_impl(context):
     context.secret_garden_login.reset_password_button()
 
 
-@then('The "Ti-a fost trimis email cu link pentru resetarea parolei." message appears')
-def step_impl(context):
-    context.secret_garden_login.reset_password_message()
+@then('The "{reset_message}" message appears')
+def step_impl(context, reset_message):
+    context.secret_garden_login.reset_password_message(reset_message)
 
 
 # Scenario: Check if the user can log in with valid credentials

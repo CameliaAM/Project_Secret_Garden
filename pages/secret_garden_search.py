@@ -107,9 +107,9 @@ class Search(Browser):
         except Exception as e:
             logging.error(f"An error occurred while checking if the shopping cart is empty : {str(e)}")
 
-    def search_haworthia(self):
-        product = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.SEARCH_BAR))
-        product.send_keys('Haworthia', Keys.ENTER)
+    def search_haworthia(self, product):
+        search = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.SEARCH_BAR))
+        search.send_keys(product, Keys.ENTER)
 
     def sort_prices_from_low_to_high(self):
         dropdown = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.DROPDOWN))

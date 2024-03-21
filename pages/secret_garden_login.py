@@ -116,12 +116,11 @@ class HomePage(Browser):
         except Exception as e:
             logging.error(f"An error occurred while clicking the reset password button : {str(e)}")
 
-    def reset_password_message(self):
+    def reset_password_message(self, reset_message):
         try:
             message = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.RESET_MSG))
             actual_message = message.text.strip()
-            expected_message = "Ti-a fost trimis email cu link pentru resetarea parolei."
-            assert expected_message in actual_message, "Text not found."
+            assert reset_message in actual_message, "Text not found."
             logging.info(f"The reset password message was found : {actual_message}")
         except Exception as e:
             logging.error(f"An error occurred: {e}")

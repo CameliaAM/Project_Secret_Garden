@@ -81,9 +81,9 @@ def step_impl(context):
 
 
 # Scenario: Verify sorting by price filter
-@when('I search for "Haworthia"')
-def step_impl(context):
-    context.secret_garden_search.search_haworthia()
+@when('I search for "{product}"')
+def step_impl(context, product):
+    context.secret_garden_search.search_haworthia(product)
 
 
 @when('I sort the prices from low to high')

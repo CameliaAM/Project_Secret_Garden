@@ -38,11 +38,14 @@ Feature: Test the search functionality of Secret Garden website
     Then The shopping cart is empty
 
   @test5
-  Scenario: Verify sorting by price filter
+  Scenario Outline: Verify sorting by price filter
     Given I am on the https://secretgarden.ro/
-    When I search for "Haworthia"
+    When I search for "<product>"
     And I sort the prices from low to high
     Then The prices should be sorted correctly
+    Examples:
+      |product  |
+      |Haworthia|
 
   @test6
   Scenario: Check if I can select an option from the "Oferta Produs" menu

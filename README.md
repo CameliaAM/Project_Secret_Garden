@@ -16,7 +16,9 @@ The framework used is BDD (Behavior Driven Development), which focuses on descri
 - [Behave](https://behave.readthedocs.io/en/latest/):  BDD framework for Python.
   - Installation: `pip install behave`
 - [WebDriver Manager](https://pypi.org/project/webdriver-manager/): Library for managing and automatically installing the WebDriver needed for Selenium.
-  - Instalare: `pip install webdriver-manager`
+  - Installation: `pip install webdriver-manager`
+- [behave-html-formatter](https://pypi.org/project/behave-html-formatter/): HTML formatter for behave. Writes a single-page HTML file for test run with all features/scenarios.
+  - Installation: `pip install behave-html-formatter`
 
 ## Installing the project
 
